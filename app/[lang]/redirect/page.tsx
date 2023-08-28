@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { useAppSelector, useAppDispatch } from "@/app/redux/store";
+import { useAppSelector, useAppDispatch } from "@/redux/store";
 import { verifyToken } from "@/database/actions";
 
 

@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { ValidateLogin, verifyToken } from "@/database/actions";
-import { useAppDispatch, useAppSelector } from "@/app/redux/store"; 
+import { useAppDispatch, useAppSelector } from "@/redux/store"; 
 import {useRouter} from "next/navigation";
 import { dictionary } from "@/dictionaries/content";
 

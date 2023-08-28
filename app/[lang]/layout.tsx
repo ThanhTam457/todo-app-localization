@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { defaultLocale } from '@/middleware'
 import { Provider } from 'react-redux';
-import { store } from '../redux/store';
+import { store } from '../../redux/store';
 import Nav from './components/Nav';
 
 const inter = Inter({ subsets: ['latin'] })

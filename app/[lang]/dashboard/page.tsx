@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useState, useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "@/app/redux/store";
+import { useAppDispatch, useAppSelector } from "@/redux/store";
 import { getAllTodoTasksByUserId, addTodoTask, verifyToken } from '@/database/actions'
 import { useRouter } from "next/navigation";
 import TaskList from "../components/TaskList";
@@ -10,8 +10,8 @@ import jwt_decode from "jwt-decode";
 import Header from "../components/Header";
 import { dictionary } from "@/dictionaries/content";
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import { Row, Col } from "react-bootstrap";
+import {Button} from 'react-bootstrap';
+import {Col, Row} from "react-bootstrap";
 
 
 interface todoTask {
@@ -90,7 +90,17 @@ const dashboard = ({params}: {params: {lang: string}}) => {
             <div className="flex items-center justify-center p-5">
                 <img src="/images/img5.png" alt="" />
             </div>
-            <h4 style={{textAlign: "start", paddingLeft: "50px", color: "#610101"}}>{dictionary [params.lang]?.tasklist_name}</h4>
+            <Row className="px-5">
+                <Col lg={6}>
+                    <h4>{dictionary[params.lang]?.dailytask_name}</h4>
+                </Col>
+                <Col lg={6}>
+                    <Button style={{color: 'black'}} variant="primary" onClick={handleShow}>
+                        {dictionary[params.lang]?.add_name}
+                    </Button>
+                </Col>
+            </Row>
+            
             <div style={{padding: "20px 150px"}}>
                 {taskState.tasks && <TaskList todoTaskList={taskState.tasks} ></TaskList> }
             </div>
@@ -104,10 +114,10 @@ const dashboard = ({params}: {params: {lang: string}}) => {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button className="text-dark" variant="primary" onClick={handleAddTask}>
-                        Add
+                        {dictionary[params.lang]?.add_name}
                     </Button>
                     <Button className="text-dark" variant="secondary" onClick={handleClose}>
-                        Cancel
+                        {dictionary[params.lang]?.cancel_name}
                     </Button>
                 </Modal.Footer>
             </Modal>

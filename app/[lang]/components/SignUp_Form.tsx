@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { useState } from 'react';
-import { useAppDispatch, useAppSelector } from '@/app/redux/store';
+import { useAppDispatch, useAppSelector } from '@/redux/store';
 import { addUserToDb } from '@/database/actions';
 import { dictionary } from '@/dictionaries/content';
 import { useRouter } from 'next/navigation';
