@@ -43,9 +43,7 @@ const dashboard = ({params}: {params: {lang: string}}) => {
         if(!token){
             return;
         }else{
-            dispatch(verifyToken(token) as any);
-            console.log('run this for first time');
-            
+            dispatch(verifyToken(token) as any);            
         }
     },[])
     
@@ -61,8 +59,7 @@ const dashboard = ({params}: {params: {lang: string}}) => {
                 setCurrentUserId(new_currentId);
             }
             try{
-                console.log(`current userId: `, currentUserId )
-                //dispatch(getAllTodoTasksByUserId(currentUserId));                   
+                console.log(`current userId: `, currentUserId )                 
             } catch(err){
                 console.log("error");
             }
