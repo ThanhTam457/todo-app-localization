@@ -44,9 +44,6 @@ const SignUp_Form = ({params}: {params: {lang: string}}) => {
             count ++;
         }        
     }
-    console.log(useAppSelector((state)=>state.user));
-
-
 
     return ( 
         <form style={{padding: "0px 250px"}}> 
